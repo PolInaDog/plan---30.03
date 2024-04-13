@@ -1,3 +1,18 @@
+// Функция удаления задач
+function deleteTask(taskId) {
+    if (confirm("Удалить задачу?")) {
+        fetch(`delete_task.php?id=${taskId}`, {
+            method: `GET`
+        })
+            .then(() => {
+                window.Location.reload();
+            })
+            .catch((error) => {
+                console.log("Ошибка при удалении задачи");
+            })
+    }
+}
+
 // функция загрузки и отображения задач на странице
 function loadTasks() {
     fetch('get_task.php') // отправка GET запроса на сервер для получения задач
@@ -22,8 +37,9 @@ function loadTasks() {
                     `Дата : ${tasks.task_date}
                     <br>Время:${tasks.task_time}
                     <br>Задача:${tasks.task}
-                    <br>Время:${tasks.priority}`
-
+                    <br>Время:${tasks.priority}
+                    <button onclick ='deleteTask(${tasks.id})'>Удалить</button>
+                    `
                 taskList.appendChild(listItem);
             })
 
