@@ -1,6 +1,6 @@
 // функция загрузки и отображения задач на странице
 function loadTasks() {
-    fetch('get_tasks.php') // отправка GET запроса на сервер для получения задач
+    fetch('get_task.php') // отправка GET запроса на сервер для получения задач
         .then((response) => {
             // Декодирует ответ в формате JSON
             return response.json()
@@ -19,9 +19,9 @@ function loadTasks() {
                 // создать новый элемент списка
                 const listItem = document.createElement('li');
                 listItem.innerHTML =
-                    `Дата : ${tasks.tasks_date}
-                    <br>Время:${tasks.tasks_time}
-                    <br>Задача:${tasks.tasks}
+                    `Дата : ${tasks.task_date}
+                    <br>Время:${tasks.task_time}
+                    <br>Задача:${tasks.task}
                     <br>Время:${tasks.priority}`
 
                 taskList.appendChild(listItem);
