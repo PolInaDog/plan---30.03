@@ -19,7 +19,7 @@
                 <input class="form_row" type="text" name="task" placeholder="Добавить задачу" required>
                 <input class="form_row" type="date" name="task_date" required>
                 <input class="form_row" type="time" name="task_time" required>
-                <select name="form_row" name="priority">
+                <select class="form_row" name="priority">
                     <option value="low">Низкая важность</option>
                     <option value="medium">Средняя важность</option>
                     <option value="high">Высокая важность</option>
